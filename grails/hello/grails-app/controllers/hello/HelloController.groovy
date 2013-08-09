@@ -1,6 +1,5 @@
 package hello
 
-import grails.converters.JSON
 import java.util.concurrent.ThreadLocalRandom
 
 class HelloController {
@@ -9,7 +8,7 @@ class HelloController {
       def response = [
         message: "Hello, world"
       ]
-      render response as JSON
+      render response as JackSON
     }
 
     def db() {
@@ -20,13 +19,13 @@ class HelloController {
       for (int i = 0; i < queries; i++) {
         worlds.add(World.read(random.nextInt(10000) + 1));
       }
-      render worlds as JSON
+      render worlds as JackSON
     }
     
     def json() {
       def response = [
         message: "Hello, world"
       ]
-      render response as JSON
+      render response as JackSON
     }
 }
